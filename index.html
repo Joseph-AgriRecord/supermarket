@@ -362,13 +362,14 @@ footer {
   gap: 28px;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 20px;
 }
 
 .f-grid h3 {
   font-size: 16px;
   font-weight: 700;
   margin-bottom: 12px;
-  color: #e9c46a; /* accent yellow-gold */
+  color: #e9c46a;
 }
 
 .f-grid ul {
@@ -380,10 +381,11 @@ footer {
 .f-grid ul li {
   margin-bottom: 10px;
 }
+
 .f-grid ul li a {
   color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
-  position: relative; /* needed for the pseudo-element */
+  position: relative;
   transition: color 0.3s;
   font-size: 14px;
 }
@@ -392,22 +394,22 @@ footer {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -2px; /* slightly below the text */
+  bottom: -2px;
   width: 0;
-  height: 3px; /* thickness of the line */
-  background-color: #f4a261; /* soft orange */
+  height: 3px;
+  background-color: #f4a261;
   transition: width 0.3s ease;
 }
 
 .f-grid ul li a:hover {
-  color: #f4a261; /* change text color on hover */
+  color: #f4a261;
 }
 
 .f-grid ul li a:hover::after {
-  width: 100%; /* line spans the full text width */
+  width: 100%;
 }
 
-
+/* Social icons */
 .socials {
   display: flex;
   gap: 12px;
@@ -432,6 +434,7 @@ footer {
   transform: translateY(-2px);
 }
 
+/* Built by */
 .built-by {
   margin-top: 30px;
   text-align: center;
@@ -442,19 +445,43 @@ footer {
   padding-top: 18px;
 }
 
-
+/* Payments */
 .payments {
   display: flex;
   gap: 12px;
   align-items: center;
   margin-top: 8px;
+  flex-wrap: wrap; /* ✅ prevents overflow */
 }
+
 .payments i {
   font-size: 28px;
   color: white;
 }
+
 .payments img {
   height: 26px;
+}
+
+/* 🔹 RESPONSIVE BREAKPOINTS */
+@media (max-width: 960px) {
+  .f-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .f-grid {
+    grid-template-columns: 1fr; /* Stack on mobile */
+    text-align: center;
+  }
+  .socials {
+    justify-content: center;
+  }
+  .payments {
+    justify-content: center;
+  }
 }
 
 
